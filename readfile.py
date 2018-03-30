@@ -2,9 +2,11 @@ from PIL import Image
 
 file=open("wider_face_train_bbx_gt.txt","r")
 details=''
+files=0
 for rline in file:
   line = rline.strip()
   if line.endswith('.jpg'):
+          files += 1
 	  #print "images/" + line
           if len(details) > 0:
 	   print details
@@ -35,5 +37,5 @@ for rline in file:
 
 
 print details
-
+print files
 print "end"
